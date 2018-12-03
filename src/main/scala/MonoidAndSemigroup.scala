@@ -43,5 +43,5 @@ class MonoidAndSemigroup {
   val intSetMonoid = Monoid[Set[Int]]
 
   // Set intersection form a Semigroup (no monoid because there is no empty element
-  implicit def setIntersectionSemigroup[A] : Semigroup[Set[A]] = (x: Set[A], y: Set[A]) => x intersect y
+  implicit def setIntersectionSemigroup[A]: Semigroup[Set[A]] = (x: Set[A], y: Set[A]) => x intersect y
 }
