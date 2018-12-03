@@ -1,3 +1,6 @@
+import Usage.Cat
+import cats.Show
+import cats.syntax.show.toShow
 
 // Type class
 // API. Defines, what we want to be able to do
@@ -10,7 +13,7 @@ trait Printable[A] {
 object PrintableInstances {
   implicit val printString: Printable[String] = (value: String) => "String is: " + value
 
-  implicit val printInt = new Printable[Int] {
+  implicit val printInt: Printable[Int] = new Printable[Int] {
     override def format(value: Int): String = "Int is: " + value
   }
 }
@@ -56,6 +59,16 @@ object PrintableWithInterfaceSyntax {
     val cat = Cat("Kleo", 3, "green")
 
     cat.print
+  }
+}
+
+object PrintableWithCats {
+  implicit val catShow : Show[Cat] = Show.show(value => s"${value.name} is a ${value.age} year-old ${value.color} cat.")
+
+  def main(args: Array[String]): Unit = {
+    val cat = Cat("Kleo", 3, "grey")
+
+    println(cat.show)
   }
 }
 
