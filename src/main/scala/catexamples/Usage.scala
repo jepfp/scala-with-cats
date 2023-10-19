@@ -1,3 +1,5 @@
+package catexamples
+
 
 
 object Usage {

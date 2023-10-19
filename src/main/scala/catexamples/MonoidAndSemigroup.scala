@@ -1,3 +1,5 @@
+package catexamples
+
 class MonoidAndSemigroup {
 
   trait Semigroup[A] {

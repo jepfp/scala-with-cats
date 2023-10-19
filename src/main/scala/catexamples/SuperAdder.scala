@@ -1,8 +1,10 @@
+package catexamples
+
 import cats.kernel.Monoid
 
 object SuperAdder {
 
-  import cats.syntax.semigroup._ // for |+|
+  import cats.syntax.semigroup.* // for |+|
 
   // Exercise SuperAdder
   def add[A](items: List[A])(implicit monoid: Monoid[A]) : A = {
@@ -10,9 +12,9 @@ object SuperAdder {
   }
 
   def main(args: Array[String]): Unit = {
-    import cats.syntax.show._ //for show
-    import cats.instances.int._ //to provide a monoid for Int
-    import cats.instances.option._ //to provide a monoid for Option
+    import cats.instances.int.*
+    import cats.instances.option.*
+    import cats.syntax.show.* //to provide a monoid for Option
 
     println(add(List(2, 4, 5)).show)
     println(add(List(Some(2), None, Some(4), Some(5))).show)

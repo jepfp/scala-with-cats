@@ -1,5 +1,7 @@
+package catexamples
+
 import cats.Functor
-import cats.syntax.functor._ // syntax to have map available on the branch or leaf
+import cats.syntax.functor.* // syntax to have map available on the branch or leaf
 
 
 object FunctorExercise {

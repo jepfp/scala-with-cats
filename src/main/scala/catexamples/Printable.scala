@@ -1,4 +1,6 @@
-import Usage.Cat
+package catexamples
+
+import catexamples.Usage.Cat
 import cats.Show
 import cats.syntax.show.toShow
 
@@ -25,8 +27,8 @@ object PrintableWithInterfaceObject {
   def print[A](value: A)(implicit printable: Printable[A]): Unit = println(printable.format(value))
 
 
-  import PrintableInstances._
-  import Usage._
+  import PrintableInstances.*
+  import Usage.*
 
   def main(args: Array[String]): Unit = {
     val anInt = 6
@@ -52,8 +54,8 @@ object PrintableSyntax {
 }
 
 object PrintableWithInterfaceSyntax {
-  import Usage._
-  import PrintableSyntax._
+  import PrintableSyntax.*
+  import Usage.*
 
   def main(args: Array[String]): Unit = {
     val cat = Cat("Kleo", 3, "green")
